@@ -1,3 +1,8 @@
+body {
+  background: url("/home/mikenieva/Desktop/MEX-Data-Lovers-008/src/img/pokemon.jpg");
+   background-size: 100%;
+
+   }
 .containerCard {
   display: flex;
   flex-direction: row;
