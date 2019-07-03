@@ -1,4 +1,3 @@
-//mostrar la data
 const parapintar = document.getElementById('cardInformation')
 const showData = () => {
   let items = ''; //Variable vacía donde se imprimira cada elemento del data
@@ -8,6 +7,11 @@ const showData = () => {
     const img = element.img
     const type = element.type[0]
     
+  let  = pokemon.filter();
+
+
+
+
       items +=`<div>
       <h3> # ${num}</h3>
       <h4>${name}</h4>
@@ -22,3 +26,7 @@ const showData = () => {
     parapintar.innerHTML = items
 }
 showData();
+
+
+  //const parapintar = pokemon.filter(element => (element.name < 
+    //return.num 

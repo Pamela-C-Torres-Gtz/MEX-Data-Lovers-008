@@ -1,14 +1,3 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-/*
-const example = () => {
-  return 'example';
-};
-
-window.example = example;*/
-
-//Funcion para filtrar
-
 window.pokemongo = {
   filterData(data, condition)  {
     let tiposDePokemon;
