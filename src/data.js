@@ -80,4 +80,4 @@ window.pokemongo = {
       } )
      return data;
   }
-},
+},*/
