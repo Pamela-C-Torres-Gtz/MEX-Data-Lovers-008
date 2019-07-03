@@ -1,6 +1,54 @@
-/*ponerle color a las etiquetas de las letras de nuestras tarjetitas*/
+/* colocar todo de la etiqueta li alineado y centrado a la izquierda*/
+.navegacion{
+  font-size: 16px;
+  display: inline;
+  padding: 14px 16px;
+}
+  
+body
+{
+  background-image: url(img/fondo2.png);
+}
 
+/* colocar la fuente en toda nuestra pagina*/
+*{
+  font-family: 'Changa', sans-serif;
+}
+
+/*tarjetitas de pokemon*/
+.cardInformation.row {
+  width  : 60px;
+  height : 60px;
+  border : 20px solid rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin : 20px 0;
+
+  background-size    : 40px;
+  background-position: center;
+  background-color   : gold;
+}
+
+/* darle formato a nuestra tarjetita en cuanto a la letra*/
 h3{
-  color: blue;
-  text-shadow: 2px 1px 2px black;
+  color: rgb(10, 9, 17); /*color de la letra*/
+  text-shadow: 1px 1px 1px  #FFF824; /*sombreado*/ 
+  font-weight: 500;
+  width: 300px;
+  font-size: 30px;
+}
+
+h4{
+  color: #1511Ff; /*color de la letra*/
+  text-shadow: 1px 1px 1px  rgb(12, 12, 9); /*sombreado*/
+  font-weight: 500; 
+  width: 250px;
+  font-size: 24px;
+}
+
+h5{
+  color:#EB0E01; /*color de la letra*/
+  text-shadow: 1px 1px 1px  rgb(24, 23, 16); /*sombreado*/
+  font-weight: 500; 
+  width: 250px;
+  font-size: 24px;
 }

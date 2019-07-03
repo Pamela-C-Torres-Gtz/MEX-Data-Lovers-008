@@ -9,7 +9,7 @@ const showData = () => {
     const type = element.type[0]
     
       items +=`<div>
-      <h3>${num}</h3>
+      <h3> # ${num}</h3>
       <h4>${name}</h4>
       <figure>
         <img src=${img} alt="">
@@ -22,26 +22,3 @@ const showData = () => {
     parapintar.innerHTML = items
 }
 showData();
-
-
-
-
-
-// intereaccion con lo de map
-
- // interaccion del boton filtrar por tipo de pokemon
-
-//  document.getElementById("selectType").addEventListener("change",() =>{
-//  document.getElementById("containerOrganized").innerHTML = " "  
-    
-//    let tipo =document.getElementById("selectType").value;
-    
-//      for (let i = 0; i <window.pokemongo.filterData(.pokemon, tipo).length ; i++){   
-
-//      document.getElementById("containerOrganized").innerHTML += ` 
-//     //  ${window.pokemongo.filterData(POKEMON.pokemon, tipo)[i].num}
-//     //  ${window.pokemongo.filterData(POKEMON.pokemon, tipo)[i].img}.png">
-//     //  ${window.pokemongo.filterData(POKEMON.pokemon, tipo)[i].name}
-//     //  ${window.pokemongo.filterData(POKEMON.pokemon, tipo)[i].type} `  
-//     //  }
-//      console.log(tipo);
