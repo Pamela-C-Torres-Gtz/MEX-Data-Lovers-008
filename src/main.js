@@ -1,15 +1,20 @@
-const parapintar = document.getElementById('cardInformation')
-const showData = () => {
-  let items = ''; //Variable vacía donde se imprimira cada elemento del data
-  POKEMON.pokemon.forEach(element => {
+  const parapintar = document.getElementById('cardInformation')
+  const dataPoke= POKEMON.pokemon 
+  const selectTypePK= document.getElementById('selectType')
+  const selectEvolution= document.getElementById('evolution')
+  const newArray = []
+  const newData = []
+  
+  const showData/* const print pokemons*/ = () => {
+    let items = ''; //Variable vacía donde se imprimira cada elemento del data
+    dataPoke.forEach(element => {
     const num = element.num
     const name = element.name
     const img = element.img
     const type = element.type[0]
     
   
-      items +=`<div class= "card-item">
-      
+      items +=`<div class= "col-4 card-item">
       <p class ="poke-num"> # ${num}</p>
       <p class ="poke-name">${name}</p>
       <figure class ="poke-img">
@@ -24,37 +29,32 @@ const showData = () => {
 }
 showData();
 
+/*/Funcion y yamado de filtrado por tipo de pokemon
+selectTypePK.addEventListener("change",() =>{
+document.getElementById("container_organized").innerHTML = " "
 
+let tipoPk = selectTypePK.value
 
-    /*ejecucion de ordenar
-    const paraordenar= document.getElementById("container_organized"); //pinta el listado ordenado
-    const orderData= () => { 
-    let div_container ='';
-      document.getElementById("selectOrder").addEventListener("change", () => {
-       
-        POKEMON.pokemon.forEach(element => {
-     if (document.getElementById("selectOrder").value === "a-z" || document.getElementById("selectOrder").value === "z-a") {
-      document.getElementById("container_organized").innerHTML +=` 
-      
-      <h5 class="header"><b>#${window.pokemongo.sortData(POKEMON.pokemon, "name", document.getElementById("selectOrder").value)[i].num}</b></h5>
-      <div class="card horizontal">
-        <div class="card-image">
-          <img src=${window.pokemongo.sortData(POKEMON.pokemon, "name", document.getElementById("selectOrder").value)[i].num}.png" alt="${window.pokemongo.sortData(POKEMON.pokemon, "name", document.getElementById("selectOrder").value)[i].img}">
-        </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <h5> ${window.pokemongo.sortData(POKEMON.pokemon, "name", document.getElementById("selectOrder").value)[i].name}</h5>
-          </div>
-          <div class="card-action">
-              <button class="card_container waves-effect waves btn modal-trigger  " href="#modal1" >Ficha pokemon</button>
-          </div>
-        </div>
-      </div>
-    </div>`    
+const showType = () => {
+  for (let index = 0; index < btnPok.length; index ++)
+  {
+   btnPok[index].addEventListener('click', ()=>{
+    const idTarget= event.target.id
+    const newArray=dataPok.filter(pokemon != 0> pokemon.type[0] === 'fire')//crear una nueva variable   
+    newData = newArray
+    printPokemon(newData)
+   })
   }
-   div_container(window.pokemongo.sortData(POKEMON.pokemon, "name", document.getElementById("selectOrder").value),card_Pokemon); 
-   }
-  });
+  pickEgg.addEventListener('change', () =>{
+    const valueUser = pickEgg.value
+    
+    if (valueUser =='tiene'){
+      const pokemonEgg = newData.filter(havegg => havegg.egg)
+      printPokemon(pokemonEgg)
+    } else if(valueUser == 'Not in Eggs') {
+       const pokemonEgg = newData.filter(havegg => havegg.egg )
+       printPokemon(pokemonEgg)
+    };
+abrirFicha(window.pokemon.filterData(POKEMON.pokemon, tipo), card_Pokemon);
 }
-    orderData();
-  */
+showType()*/
