@@ -21,7 +21,7 @@
 
 //funcionde ordenar
 window.pokemon2 = {
-  sortData: (data, sortBy, sortOrder) => {
+  sortData (data, sortBy, sortOrder) {
   if (sortBy === "upward" && sortOrder === "a-z"){
     data.sort((a,b) =>{
       if (a.name > b.name) {
