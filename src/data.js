@@ -1,52 +1,72 @@
-
-  /*resolucion de duda por parte de jonh el 9 de julio 2019
-  
-  
-
-  const printPkemons = (dataPok) =>{
-    let str = '';
-    dataPok.forEch(pokemon => {
-     str += `<div>
-     <h3>${pokemon.name}</h3>
-     <p>${pokemon.type}</p>
-     <p>${pokemon.egg}</p>
-     <img src =${pokemon.img}> 
- </div>`
-    });
-  }
-
-  for (let index = 0; index < btnPok.length; index ++)
-  {
-   btnPok[index].addEventListener('click', ()=>{
-    const idTarget= event.target.id
-    const newArray=dataPok.filter(pokemon != 0> pokemon.type[0] === 'fire')//crear una nueva variable   
-    newData = newArray
-    printPokemon(newData)
-   })
-  }
-  pickEgg.addEventListener('change', () =>{
-    const valueUser = pickEgg.value
-    
-    if (valueUser =='tiene'){
-      const pokemonEgg = newData.filter(havegg => havegg.egg)
-      printPokemon(pokemonEgg)
-    } else if(valueUser == 'Not in Eggs') {
-       const pokemonEgg = newData.filter(havegg => havegg.egg )
-       printPokemon(pokemonEgg)
-    });
-  }*/
-+
+//filtrar por tipo de pokeon
   window.pokemon = {
-    filterData(data, condition) {
-    let valueUser;//let tiposDePokemon;
-    if (valueUser == 'str')
-    {
-      const selectEvolution = newData.filter(havenext_evolution => havenext_evolution.next_evolution)
-      parapintar(selectEvolution)
-    } else if (valueUser == 'prev_evolution') {
-      const selectEvolution = newData.filter(havenext_evolution => havenext_evolution.next_evolution )
-      parapintar(selectEvolution)
-    };
+    filterData(data, condition)  {
+      let tiposDePokemon;
+      if (typeof condition === "string") 
+      {
+        tiposDePokemon = data.filter(tipos =>{
+          return tipos.type.indexOf(condition) !== -1;
+         })
+            
+      }
+      else {
+        tiposDePokemon = data.filter(evolucion =>{
+          return evolucion.prev_evolution===(condition);
+        })  
     }
-  };
-  return tiposDePoke;
+    return tiposDePokemon; 
+  }
+};
+
+
+//funcionde ordenar
+window.pokemon2 = {
+  sortData: (data, sortBy, sortOrder) => {
+  if (sortBy === "upward" && sortOrder === "a-z"){
+    data.sort((a,b) =>{
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      //a debe ser igual b
+      return 0; 
+    } );
+   }else if (sortBy === "falling" && sortOrder === "z-a"){
+    data.reverse((a,b) =>{
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      //a debe ser igual b
+      return 0;
+    } );
+
+    } else if (sortBy === "less" && sortOrder === "1-151"){
+    data.sort((a,b) =>{
+      if (a.num > b.num) {
+        return 1;
+      }
+      if (a.num < b.num) {
+        return -1;
+      }
+      //a debe ser igual b
+      return 0;
+    } );
+   } else if (sortBy === "higher" && sortOrder === "151-1"){
+      data.reverse((a,b) =>{
+        if (a.num > b.num) {
+       return 1;
+     }
+      if (a.num < b.num) {
+        return -1;
+      }
+    //a debe ser igual b
+    return 0;
+  });
+  }
+}
+}
