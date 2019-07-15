@@ -103,26 +103,28 @@ padding:0;
   box-shadow: 2px 2px 7px 1px #1C6EA4;
   background-color: rgba(231, 211, 25, 0.6);
  /*colocar tamaño y ancho de letra*/
-  font-weight: 300;
-  font-size: xx-large;
+  
   /*datos de los nombres de las tarjetas*/
 }  
 
 /* darle formato a nuestra tarjetita en cuanto a la letra*/
 .poke-num{
   color: rgb(10, 9, 17); /*color de la letra*/ 
-  
+  font-weight: 300;
+  font-size: xx-large;
 }
 
 .poke-name{
   color: #1511Ff; /*color de la letra*/
- 
+  font-weight: 300;
+  font-size: xx-large;
   
 }
 
 .poke-type{
   color: #1511Ff; /*color de la letra*/
-  
+  font-weight: 300;
+  font-size: large;
 }
 
 /*para hacer resposivo*/

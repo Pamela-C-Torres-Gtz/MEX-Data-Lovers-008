@@ -23,19 +23,18 @@
     const name = element.name
     const img = element.img
     const type = element.type
-   // const weaknesses = element.weaknesses
+    const weaknesses = element.weaknesses
     
   
       items +=`<div class= "col-4 card-item">
       
-      <p class ="poke-num"> # ${num}</p>
-      <p class ="poke-name"><strong>${name}<strong></p>
+      <p class ="poke-num"><strong> # ${num}</strong></p>
+      <p class ="poke-name"><strong>${name}</strong></p>
+      <p class ="poke-type">* Tipo: ${type}</p>
       <figure class ="poke-img">
         <img src="${img}" alt= " " />
         </figure>
-      
-        <p class ="poke-type">* Tipo: ${type}</p>
-       
+        <p class ="poke-type">* Devilidad: ${weaknesses}</p>
     </div>`
       
     });
@@ -53,13 +52,13 @@ document.getElementById("selectType").addEventListener("change",() =>{
 
      document.getElementById("container_organized").innerHTML += ` 
      <div class="col-4 card-item">
-     <p class="poke-num"># ${window.pokemon.filterData(dataPoke, tipo)[i].num}</b></p>
+     <p class="poke-num"><strong># ${window.pokemon.filterData(dataPoke, tipo)[i].num}</strong></p>
      <p class="poke-name"><strong>${window.pokemon.filterData(dataPoke, tipo)[i].name}</strong></p>
-       <figure class ="poke-img">
+     <p class ="poke-type">* Tipo: ${window.pokemon.filterData(dataPoke, tipo)[i].type}</p>  
+     <figure class ="poke-img">
          <img src="${window.pokemon.filterData(dataPoke, tipo)[i].img}" alt= " " />
        </figure>
-       <p class ="poke-type">* Tipo: ${window.pokemon.filterData(dataPoke, tipo)[i].type}</p>
-      
+       <p class ="poke-type">* Devilidad: ${window.pokemon.filterData(dataPoke, tipo)[i].weaknesses}</p>
    </div>
        `;  
  }
@@ -75,12 +74,13 @@ document.getElementById("evolution").addEventListener("change",() =>{
 
      document.getElementById("container_organized").innerHTML += ` 
      <div class="col-4 card-item">
-     <p class="poke-num"># ${window.pokemon.filterData(dataPoke, tipo)[i].num}</b></p>
+     <p class="poke-num"><strong># ${window.pokemon.filterData(dataPoke, tipo)[i].num}</strong></p>
      <p class="poke-name"><strong>${window.pokemon.filterData(dataPoke, tipo)[i].name}</strong></p>
-       <figure class ="poke-img">
+     <p class ="poke-type">* Tipo: ${window.pokemon.filterData(dataPoke, tipo)[i].type}</p>  
+     <figure class ="poke-img">
          <img src="${window.pokemon.filterData(dataPoke, tipo)[i].img}" alt= " " />
        </figure>
-       <p class ="poke-type">* Tipo: ${window.pokemon.filterData(dataPoke, tipo)[i].type}</p>
+      <p class ="poke-type">* Devilidad: ${window.pokemon.filterData(dataPoke, tipo)[i].weaknesses}</p>
       
    </div>
        `;  
@@ -95,17 +95,17 @@ document.getElementById("evolution").addEventListener("change",() =>{
     div_container.innerHTML=""
 
       if (document.getElementById("selectOrder").value === "a-z" || document.getElementById("selectOrder").value === "z-a") {
-        for (let i = 0; i < dataPoke.length ;i++) {
-     
+        for (let i = 0; i <dataPoke.length ; i++) {
+         
         document.getElementById("container_organized").innerHTML +=` 
         <div class="col-4 card-item">
-        <p><b>#${window.pokemon2.sortData(dataPoke, "name", document.getElementById("selectOrder").value)[i].num}</b></p>
+        <p class="poke-num"><strong>#${window.pokemon2.sortData(dataPoke, "num", document.getElementById("selectOrder").value)[i].num}</strong></p>
+        <p class="poke-name"><strong>${window.pokemon2.sortData(dataPoke, "name", document.getElementById("selectOrder").value)[i].name}</strong></p>
+        <p cslass = "poke-type>* Tipo:  ${window.pokemon2.sortData(dataPoket, "name", document.getElementById("selectOrder").value)[i].type}</p>
         <figure class ="poke-img">
             <img src="${window.pokemon2.sortData(dataPoke, "name", document.getElementById("selectOrder").value)[i].img}" alt=" "/>        </figure>
           </figure>
-         
-              <p cslass = "poke-type>* Tipo:  ${window.pokemon2.sortData(dataPoket, "name", document.getElementById("selectOrder").value)[i].name}</h5>
-           
+          <p cslass = "poke-type>* Tipo:  ${window.pokemon2.sortData(dataPoket, "name", document.getElementById("selectOrder").value)[i].weaknesses}</p>  
       </div>        
      `    
      ;
