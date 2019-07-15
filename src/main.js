@@ -1,3 +1,14 @@
+  
+  let thepokemon;
+
+
+  /*fetch('data/pokemon/pokemon.json')
+  .then(answer =>answer.json())
+  .then(answer =>{
+    thepokemon = answer;
+    imagePokemon(thepokemon);
+  } )*/
+
   const parapintar = document.getElementById('cardInformation')
   const dataPoke= POKEMON.pokemon 
   const selectTypePK= document.getElementById('selectType')
@@ -11,16 +22,20 @@
     const num = element.num
     const name = element.name
     const img = element.img
-    const type = element.type[0]
+    const type = element.type
+   // const weaknesses = element.weaknesses
     
   
       items +=`<div class= "col-4 card-item">
+      
       <p class ="poke-num"> # ${num}</p>
-      <p class ="poke-name">${name}</p>
+      <p class ="poke-name"><strong>${name}<strong></p>
       <figure class ="poke-img">
         <img src="${img}" alt= " " />
         </figure>
-        <p class ="poke-type">${type}</p>
+      
+        <p class ="poke-type">* Tipo: ${type}</p>
+       
     </div>`
       
     });
@@ -29,32 +44,72 @@
 }
 showData();
 
-/*/Funcion y yamado de filtrado por tipo de pokemon
-selectTypePK.addEventListener("change",() =>{
-document.getElementById("container_organized").innerHTML = " "
-
-let tipoPk = selectTypePK.value
-
-const showType = () => {
-  for (let index = 0; index < btnPok.length; index ++)
-  {
-   btnPok[index].addEventListener('click', ()=>{
-    const idTarget= event.target.id
-    const newArray=dataPok.filter(pokemon != 0> pokemon.type[0] === 'fire')//crear una nueva variable   
-    newData = newArray
-    printPokemon(newData)
-   })
-  }
-  pickEgg.addEventListener('change', () =>{
-    const valueUser = pickEgg.value
+// accion de filtrado por ltipos
+document.getElementById("selectType").addEventListener("change",() =>{
+  document.getElementById("container_organized").innerHTML = " "  
     
-    if (valueUser =='tiene'){
-      const pokemonEgg = newData.filter(havegg => havegg.egg)
-      printPokemon(pokemonEgg)
-    } else if(valueUser == 'Not in Eggs') {
-       const pokemonEgg = newData.filter(havegg => havegg.egg )
-       printPokemon(pokemonEgg)
-    };
-abrirFicha(window.pokemon.filterData(POKEMON.pokemon, tipo), card_Pokemon);
-}
-showType()*/
+   let tipo =document.getElementById("selectType").value
+    for (let i = 0; i <window.pokemon.filterData(dataPoke, tipo).length ; i++){   
+
+     document.getElementById("container_organized").innerHTML += ` 
+     <div class="col-4 card-item">
+     <p class="poke-num"># ${window.pokemon.filterData(dataPoke, tipo)[i].num}</b></p>
+     <p class="poke-name"><strong>${window.pokemon.filterData(dataPoke, tipo)[i].name}</strong></p>
+       <figure class ="poke-img">
+         <img src="${window.pokemon.filterData(dataPoke, tipo)[i].img}" alt= " " />
+       </figure>
+       <p class ="poke-type">* Tipo: ${window.pokemon.filterData(dataPoke, tipo)[i].type}</p>
+      
+   </div>
+       `;  
+ }
+ showData(window.pokemon.filterData(dataPoke, tipo)); 
+ });
+
+ // accion de filtrado por evolucion
+document.getElementById("evolution").addEventListener("change",() =>{
+  document.getElementById("container_organized").innerHTML = " "  
+    
+   let tipo =document.getElementById("evolution").value
+    for (let i = 0; i <window.pokemon.filterData(dataPoke, tipo).length ; i++){   
+
+     document.getElementById("container_organized").innerHTML += ` 
+     <div class="col-4 card-item">
+     <p class="poke-num"># ${window.pokemon.filterData(dataPoke, tipo)[i].num}</b></p>
+     <p class="poke-name"><strong>${window.pokemon.filterData(dataPoke, tipo)[i].name}</strong></p>
+       <figure class ="poke-img">
+         <img src="${window.pokemon.filterData(dataPoke, tipo)[i].img}" alt= " " />
+       </figure>
+       <p class ="poke-type">* Tipo: ${window.pokemon.filterData(dataPoke, tipo)[i].type}</p>
+      
+   </div>
+       `;  
+ }
+ showData(window.pokemon.filterData(dataPoke, tipo)); 
+ });
+ 
+ //accion de ordenado
+ const div_container = document.getElementById("container_organized"); //imprime el listado ordenado
+
+  document.getElementById("selectOrder").addEventListener("change", () => {
+    div_container.innerHTML=""
+
+      if (document.getElementById("selectOrder").value === "a-z" || document.getElementById("selectOrder").value === "z-a") {
+        for (let i = 0; i < dataPoke.length ;i++) {
+     
+        document.getElementById("container_organized").innerHTML +=` 
+        <div class="col-4 card-item">
+        <p><b>#${window.pokemon2.sortData(dataPoke, "name", document.getElementById("selectOrder").value)[i].num}</b></p>
+        <figure class ="poke-img">
+            <img src="${window.pokemon2.sortData(dataPoke, "name", document.getElementById("selectOrder").value)[i].img}" alt=" "/>        </figure>
+          </figure>
+         
+              <p cslass = "poke-type>* Tipo:  ${window.pokemon2.sortData(dataPoket, "name", document.getElementById("selectOrder").value)[i].name}</h5>
+           
+      </div>        
+     `    
+     ;
+    }
+  }
+     showData(window.pokemon2.sortData(dataPoke, "name", document.getElementById("selectOrder").value)); 
+     });

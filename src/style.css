@@ -1,20 +1,16 @@
-/* resolucion de responsive por jonh 9 julio 2019
 
 /* colocar todo de la etiqueta li alineado y centrado a la izquierda*/
-.navegation{
+/*.navegation{
   background-color: blue
-
-}
-  
-body
-{
+}*/
+   body {
   background-image: url(img/pokemon.jpg);
-  background-repeat: repeat-y;
-  background-size: 100%;
-  background-attachment: fiexd;
-  background-position: fied;
-  
+  background-size: cover; /*para que cubra todo el body*/
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
 }
+
 /*alineacion texto de navegacion*/
 .nav-cel li>span {
   font-size: 16px;
@@ -125,7 +121,7 @@ padding:0;
 }
 
 .poke-type{
-  color:#EB0E01; /*color de la letra*/
+  color: #1511Ff; /*color de la letra*/
   
 }
 
@@ -144,5 +140,3 @@ padding:0;
    width: 100%;
  }
 }
-
-
